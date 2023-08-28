@@ -1,6 +1,7 @@
 {
 	"name": "PL_COPYDATA",
 	"properties": {
+		"description": "this pipeline copies data",
 		"activities": [
 			{
 				"name": "LKP_OLDWATERMARK TABLE",
