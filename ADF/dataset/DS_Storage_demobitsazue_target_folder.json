@@ -1,0 +1,23 @@
+{
+	"name": "DS_Storage_demobitsazue_target_folder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Storage_demobitsazure",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "target"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

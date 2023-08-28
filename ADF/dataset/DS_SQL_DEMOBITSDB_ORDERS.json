@@ -1,0 +1,32 @@
+{
+	"name": "DS_SQL_DEMOBITSDB_ORDERS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_DEMOBITSDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ORDERNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DATETIME",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ORDERS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

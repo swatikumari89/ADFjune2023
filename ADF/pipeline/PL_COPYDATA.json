@@ -1,0 +1,60 @@
+{
+	"name": "PL_COPYDATA",
+	"properties": {
+		"activities": [
+			{
+				"name": "LKP_OLDWATERMARK TABLE",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT TableName,WaterMarkValue as OldWatermarkvalue  FROM [dbo].[WATERMARK] WHERE TableName = 'ORDERS'",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQL_DEMOBITSDB_WATERMARK",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "LKP_NEWWATERMARKVALUE",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT MAX(InsertDATETIME) AS NEWWATERMARKVALUE FROM [DBO].[ORDERS]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQL_CUSTOMERBD_ORDERS",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-08-23T19:33:48Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

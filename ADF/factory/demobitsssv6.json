@@ -1,0 +1,9 @@
+{
+	"name": "demobitsssv6",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "67a874f6-be0d-432a-bc9d-183c116a8083",
+		"tenantId": "4ed5304f-b6d9-4dfc-8c6c-1f7c8bb3f4d1"
+	}
+}

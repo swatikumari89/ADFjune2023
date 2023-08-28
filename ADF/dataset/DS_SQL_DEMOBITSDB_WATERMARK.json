@@ -1,0 +1,27 @@
+{
+	"name": "DS_SQL_DEMOBITSDB_WATERMARK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_DEMOBITSDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TABLENAME",
+				"type": "varchar"
+			},
+			{
+				"name": "WATERMARKVALUE",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "WATERMARK"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
